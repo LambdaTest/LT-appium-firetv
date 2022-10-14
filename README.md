@@ -1,10 +1,6 @@
 # FireTV With Appium
 
 <p align="center">
-<img height="500" src="https://user-images.githubusercontent.com/95698164/171858189-9de5d3ef-f177-49ac-9de6-6edb3441740b.png">
-</p>
-
-<p align="center">
   <a href="https://www.lambdatest.com/blog/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-firetv" target="_bank">Blog</a>
   &nbsp; &#8901; &nbsp;
   <a href="https://www.lambdatest.com/support/docs/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-firetv" target="_bank">Docs</a>
@@ -76,8 +72,10 @@ set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
  **Using App File from System:**
  <div className="lambdatest__codeblock">
 <CodeBlock className="language-bash">
+  
 {`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/macuser/Downloads/firetv_sample.apk""
 `}
+  
 </CodeBlock>
 </div>
 
@@ -85,8 +83,10 @@ set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
 
 <div className="lambdatest__codeblock">
 <CodeBlock className="language-bash">
+  
 {`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "url=:https://prod-mobile-artefacts.lambdatest.com/assets/docs/firetv_sample.apk" -F "name=Firetv_Sample"
 `}
+  
 </CodeBlock>
 </div>
 
@@ -142,7 +142,9 @@ python firetv.py
 ```
 
 :::tip
-If you are unable to run the automation script with the above mentioned commands try **'python3'** command except for **'python'**.
+
+> If you are unable to run the automation script with the above mentioned commands try **'python3'** command except for **'python'**.
+
 :::
 
 > Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-firetv).
