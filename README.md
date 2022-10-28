@@ -75,12 +75,6 @@ set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/macuser/Downloads/fireos-sample-app.apk""
 ```
 
-**Using App URL:**
-
-```
-curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "url=:https://prod-mobile-artefacts.lambdatest.com/assets/docs/fireos-sample-app.apk" -F "name=Firetv_Sample"
-```
-
 **Tip:**
 
 - If you do not have any **.apk** file, you can run your sample tests on LambdaTest by using our sample :link: [FireTV app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/firetv_sample.apk).
@@ -98,18 +92,18 @@ You can update your custom capabilities in test scripts. In this sample project,
 
 ```python title="firetv.py"
 def getCaps():
-    desired_caps = {
+    desired_cap= {
         "deviceName" : "Amazon Fire TV Stick",
         "platformVersion" :  "7",
-        "platformName":"firetv",
-        'isRealMobile':True,
+        "platformName":"fireos",
+        "isRealMobile":True,
         "build": "firetv",
         "video": True,
-        #highlight-next-line
-        "app":"APP_URL",      #Add app (.apk) url here
+        "app":"APP_URL",  #Add app url here
         "network": True,
-        "geoLocation": "FR",
+        "geoLocation": "RU",
         "devicelog": True,
+        "visual":True
     }
 ```
 
