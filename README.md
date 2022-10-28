@@ -70,25 +70,16 @@ set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
 **Step-3:** Upload your **Fire TV** application (.apk file) to the LambdaTest servers using our **REST API**. You need to provide your **Username** and **AccessKey** in the format `Username:AccessKey` in the **cURL** command for authentication. Make sure to add the path of the **appFile** in the cURL request. Here is an example cURL request to upload your app using our REST API:
 
  **Using App File from System:**
- <div className="lambdatest__codeblock">
-<CodeBlock className="language-bash">
-  
-{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/macuser/Downloads/firetv_sample.apk""
-`}
-  
-</CodeBlock>
-</div>
+ 
+ ```bash
+curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/macuser/Downloads/firetv_sample.apk""
+```
 
 **Using App URL:**
 
-<div className="lambdatest__codeblock">
-<CodeBlock className="language-bash">
-  
-{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "url=:https://prod-mobile-artefacts.lambdatest.com/assets/docs/firetv_sample.apk" -F "name=Firetv_Sample"
-`}
-  
-</CodeBlock>
-</div>
+```
+curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "url=:https://prod-mobile-artefacts.lambdatest.com/assets/docs/firetv_sample.apk" -F "name=Firetv_Sample"
+```
 
 **Tip:**
 
