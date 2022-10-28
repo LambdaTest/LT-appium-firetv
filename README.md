@@ -98,18 +98,18 @@ You can update your custom capabilities in test scripts. In this sample project,
 
 ```python title="firetv.py"
 def getCaps():
-    desired_caps = {
+    desired_cap= {
         "deviceName" : "Amazon Fire TV Stick",
         "platformVersion" :  "7",
-        "platformName":"firetv",
-        'isRealMobile':True,
+        "platformName":"fireos",
+        "isRealMobile":True,
         "build": "firetv",
         "video": True,
-        #highlight-next-line
-        "app":"APP_URL",      #Add app (.apk) url here
+        "app":"APP_URL",  #Add app url here
         "network": True,
-        "geoLocation": "FR",
+        "geoLocation": "RU",
         "devicelog": True,
+        "visual":True
     }
 ```
 
