@@ -1,73 +1,70 @@
+from xml.dom.expatbuilder import Rejecter
 from appium import webdriver
-import os
 from selenium.webdriver.common.by import By
 import time
 
+
 def getCaps():
-    desired_caps = {
+    desired_cap= {
         "deviceName" : "Amazon Fire TV Stick",
         "platformVersion" :  "7",
-        "platformName":"firetv",
-        'isRealMobile':True,
+        "platformName":"fireos",
+        "isRealMobile":True,
         "build": "firetv",
         "video": True,
-        #highlight-next-line
-        "app":"APP_URL",      #Add app url here
+        "app":"APP_URL",  #Add app url here
         "network": True,
-        "geoLocation": "FR",
+        "geoLocation": "RU",
         "devicelog": True,
+        "visual":True
     }
 
-    return desired_caps
+    return desired_cap
 
 def runTest():
-    if os.environ.get("LT_USERNAME") is None:
-        # Enter LT username below if environment variables have not been added
-        username = "username"
-    else:
-        username = os.environ.get("LT_USERNAME")
-    if os.environ.get("LT_ACCESS_KEY") is None:
-        # Enter LT accesskey below if environment variables have not been added
-        accesskey = "accesskey"
-    else:
-        accesskey = os.environ.get("LT_ACCESS_KEY")
+    username = "YOUR_LAMBDATEST_USERNAME"           #Add your username here
+    accessToken = "YOUR_LAMBDATEST_ACCESSKEY"       #Add your accessKey here
 
-    # grid url
-    gridUrl = "stage-mobile-hub-frankfurt.lambdatestinternal.com/wd/hub"
+    gridUrl = "mobile-hub-internal.lambdatest.com/wd/hub"
 
     # capabilities
     desired_cap = getCaps()
-    url = "http://"+username+":"+accesskey+"@"+gridUrl
+    url = "http://"+username+":"+accessToken+"@"+gridUrl
 
-    print("Initiating remote driver on platform: "+desired_cap["deviceName"]+" browser: "+" version: "+desired_cap["platformVersion"])
+    print("Initiating remote driver on platform: " +
+          desired_cap["deviceName"]+" browser: "+" version: "+desired_cap["platformVersion"])
+
+    start = time.time()
     driver = webdriver.Remote(
         desired_capabilities=desired_cap,
-        command_executor= url
+        command_executor=url
     )
 
     # run test
     print(driver.session_id)
-
     time.sleep(10)
-    
-    inputfield = driver.find_element(by = By.ID, value ="webpage")
-    inputfield.click()
 
-    inputfield = driver.find_element(by = By.ID, value = "websiteName")
+    inputfield = driver.find_element(by = By.ID, value ="enterText")
     inputfield.send_keys("https://ifconfig.me")
 
-    inputfield = driver.find_element(by = By.ID, value ="findButton")
+    time.sleep(2)
+
+    inputfield = driver.find_element(by = By.ID, value ="JustAButton")
     inputfield.click()
 
-    time.sleep(3)
+    time.sleep(10)
     list2 = driver.find_element(by= By.XPATH, value="//*[@resource-id='ip_address_cell']")
     print(list2.text)
 
-    time.sleep(10)
+    time.sleep(50)
 
     driver.execute_script("lambda-status=passed")
 
     driver.quit()
+    end = time.time()
+
+    print("time taken: ", end - start)
+
 
 if __name__ == "__main__":
     runTest()
