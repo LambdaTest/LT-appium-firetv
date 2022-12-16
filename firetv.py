@@ -13,7 +13,7 @@ def getCaps():
         "build": "firetv",
         "video": True,
         "app":"APP_URL",  #Add app url here
-        "network": True,
+        "network": False,
         "geoLocation": "RU",
         "devicelog": True,
         "visual":True
