@@ -25,7 +25,7 @@ def runTest():
     username = "YOUR_LAMBDATEST_USERNAME"           #Add your username here
     accessToken = "YOUR_LAMBDATEST_ACCESSKEY"       #Add your accessKey here
 
-    gridUrl = "mobile-hub-internal.lambdatest.com/wd/hub"
+    gridUrl = "mobile-hub.lambdatest.com/wd/hub"
 
     # capabilities
     desired_cap = getCaps()
