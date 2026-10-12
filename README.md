@@ -1,5 +1,7 @@
 # Run Appium Tests on Fire TV with TestMu AI (Formerly LambdaTest)
 
+> End-to-End (E2E) testing of Fire TV apps with Appium across real devices on TestMu AI.
+
 <p align="center">
   <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
   <a href="https://pypi.org/project/Appium-Python-Client/"><img src="https://img.shields.io/pypi/v/Appium-Python-Client.svg?style=for-the-badge&labelColor=000000" alt="Appium-Python-Client version"></a>
